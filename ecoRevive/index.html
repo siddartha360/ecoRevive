@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRevive - Recycled Product Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="eco-icon">🌱</div>
+                    <h1>EcoRevive</h1>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="openSellerModal()">Sell Product</button>
+                    <a class="btn btn-primary" href="signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Revive, Reuse, Revolutionize</h2>
+                <p>Join the sustainable marketplace where recycled materials get a second life. Buy eco-friendly products or sell your upcycled creations to conscious consumers worldwide.</p>
+
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">All Categories</button>
+                <button class="filter-btn" data-category="plastic">♻️ Plastic</button>
+                <button class="filter-btn" data-category="fabric">🧵 Fabric</button>
+                <button class="filter-btn" data-category="metal">🔩 Metal</button>
+                <button class="filter-btn" data-category="glass">🍶 Glass</button>
+                <input type="text" class="search-box" placeholder="Search products..." id="searchInput">
+            </div>
+
+            <div class="stats">
+                <h3>Making a Difference Together</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="wasteReduced">2,450</div>
+                        <div class="stat-label">Tons of Waste Reduced</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="productsListed">15,678</div>
+                        <div class="stat-label">Products Listed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="happyCustomers">8,342</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here by script.js -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EcoRevive. Turning waste into wonder, one product at a time. 🌍</p>
+        </div>
+    </footer>
+
+    <!-- Seller Modal -->
+    <div class="seller-modal" id="sellerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>List Your Eco-Friendly Product</h3>
+                <button class="close-btn" onclick="closeSellerModal()">&times;</button>
+            </div>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price ($)</label>
+                    <input type="number" id="productPrice" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Material Category</label>
+                    <select id="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="plastic">Plastic</option>
+                        <option value="fabric">Fabric</option>
+                        <option value="metal">Metal</option>
+                        <option value="glass">Glass</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" placeholder="Tell us about your recycled/upcycled product..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="sellerName">Your Name</label>
+                    <input type="text" id="sellerName" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">List Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalProductName">Product Details</h3>
+                <button class="close-btn" onclick="closeProductModal()">&times;</button>
+            </div>
+            <div id="modalProductContent">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
